@@ -22,12 +22,13 @@
 
 		$name = $_POST['name'];
 		fwrite($fw, $name);
+		fwrite($fw, "\n");
 		fclose($fw);
 
 
 		$fr = fopen('name.txt', 'r');
 
-		echo fread($fr, filesize('name.txt')) . " ";
+		echo fread($fr, filesize('name.txt'));
 
 		fclose($fr);
 
