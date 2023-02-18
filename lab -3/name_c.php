@@ -5,33 +5,38 @@
 </head>
 <body>
 
-	<form action = "name_c.php" method = "POST">
+			<form action = 'name_c.php' method = 'POST'>
 
-		<fieldset>
-			<legend> Name </legend>
-			<input type="text" name="name"> <br>
+			<fieldset>
+				<legend> Name </legend>
+				<input type='text' name='name'> <br>
 		
-			<input type="submit">	
-		</fieldset>
-	</form>
-
+				<input type='submit'>	
+			</fieldset>
+		</form>
 
 
 	<?php 
+		
+		$fw = fopen('name.txt', 'a+');
 
-		if(isset($_POST['name']));
-		{
-			$name = $_POST['name'];
+		$name = $_POST['name'];
+		fwrite($fw, $name);
+		fclose($fw);
 
-			$fp = fopen('name.txt','a');
 
-			fwrite($fp,$name);
-			fclose($fp);
-		}
+		$fr = fopen('name.txt', 'r');
 
-		$fp= fopen('name.txt');
-		echo fread('$fp',filesize('name.txt'));
-		fclose($fp);
+		echo fread($fr, filesize('name.txt')) . " ";
+
+		fclose($fr);
+
+
+
+		
+
+
+		
 
 	 ?>
 
