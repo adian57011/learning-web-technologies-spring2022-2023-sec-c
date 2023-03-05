@@ -39,7 +39,17 @@
             </tr>
 
             <tr>
-                <td colspan = "180 "> <center>Welcome to X company</center> </td>
+                <td colspan = "180 ">
+                     <center>
+                       <fieldset>
+                        <legend> Forget Password</legend>
+                        <form action="" >
+                            Email: <input type="email" name = "email"><br><br>
+                            <input type="submit">
+                        </form>
+                       </fieldset>
+                    </center>
+                </td>
             </tr>
 
             <tr>

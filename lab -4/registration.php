@@ -31,23 +31,24 @@
                     }                 
                 ?>
                 
-                <th> Home </th>
-                <th> Log in </th>
-                <th> Registration</th>
+               
+                <th> <a href = "home.php">Home </a></th>
+                <th> <a href = "login.php">Log in </a> </th>
+                <th> <a href = "registration.php">Registration</a></th>
                 
             </tr>
 
             <tr>
                 <td colspan = "180 ">
                      <center>
-                        <form action="">
+                        <form action="registration.php" method = "POST">
                             <fieldset>
                                 <legend>Registration</legend>
                                 Name                : <input type="text" name = "name"> <br><br>
                                 Email               : <input type ="email" name = "email"><br><br>
                                 Username           : <input type="text" name = "username"><br><br>
                                 Password            : <input type="password"  name = "password"><br><br>
-                                Confirm Password    : <input type="password" name = "password"><br><br>
+                                Confirm Password    : <input type="password" name = "confirmpassword"><br><br>
 
                                 <fieldset>
                                     <legend>Gender</legend>
@@ -76,7 +77,34 @@
 
 
         </table>
-
       </center>
+
+      <?php
+
+        session_start();
+
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $confirmpassword = $_POST["confirmpassword"];
+
+        if($confirmpassword == $password)
+        {
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+            $_SESSION['flag'] = "True";
+
+            header("location:home.php");
+
+        }
+
+        else
+        {
+            echo "Invalid Operation";
+        }
+      
+      
+      ?>
 
     </body>

@@ -32,14 +32,28 @@
                     }                 
                 ?>
                 
-                <th> <a href = "home.php">Home </a></th>
-                <th> <a href = "login.php">Log in </a> </th>
-                <th> <a href = "registration.php">Registration</a></th>
+                <th> Logged in as </th>
+                <th> <a href = "logout.php">logout</a></th>
                 
             </tr>
 
             <tr>
-                <td colspan = "180 "> <center>Welcome to X company</center> </td>
+                <td colspan = "40 ">
+                    Account: 
+                    <ul>
+                    <li><a href= "dashboard.php" >Dashboard</a></li>
+                        <li><a href = "viewprofile.php "> View Profile </a></li>
+                        <li><a href = "editprofile.php " >Edit profile</a></li>
+                        <li><a href = "changeprofilepic.php " >Change Profile</a></li>
+                        <li><a href = "changepassword.php">Change Password</a></li>
+                        <li><a href = " logout.php">logout</a></li>
+                    </ul>
+                     
+                </td>
+                <td colspan = "120">
+                    Welcome Bob!
+
+                </td>
             </tr>
 
             <tr>

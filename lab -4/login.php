@@ -39,7 +39,23 @@
             </tr>
 
             <tr>
-                <td colspan = "180 "> <center>Welcome to X company</center> </td>
+                <td colspan = "180 ">
+                     <center>
+
+                     <form action="logincheck.php" method = "POST">
+                        Username       : <input type="text" name = "username"><br><br>
+                        Password       : <input type="password" name = "password"><br><br>
+                        <input type="submit" name = "submit" value = "submit">
+
+                        <input type="checkbox" name = "remember_me"> Remember Me
+
+                        <a href="forgetpass.php">Forget Password?</a>
+                     </form>
+
+
+
+                    </center> 
+                </td>
             </tr>
 
             <tr>
@@ -49,10 +65,6 @@
 
         </table>
         
-
-
-
-
       </center>
 
     </body>
