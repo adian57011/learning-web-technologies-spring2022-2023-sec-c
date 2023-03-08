@@ -7,8 +7,6 @@
                 width:100%;
                 
             }
-
-            
             table,td
             {
                 border: 1px solid black;
@@ -18,6 +16,17 @@
         </style>
 
     </head>
+
+    <?php
+        session_start();
+        $name = $_SESSION['name'];
+        $username = $_SESSION['username'];
+        $email = $_SESSION['email'];
+        $dob = $_SESSION['date'];
+        $gender = $_SESSION['gender'];
+
+        echo "$name";
+    ?>
     
     <body>
       <center>
@@ -53,6 +62,12 @@
                 <td colspan = "120">
                     <fieldset>
                         <legend>Profile</legend>
+
+                        Name: <?php  echo "$username";?> <br>
+                        Email: <?php echo "$email";?> <br>
+                        Gender: <?php echo "$gender";?> <br>
+                        Date of Birth: <?php echo "$dob";?> <br>
+
                         
                     </fieldset>
 

@@ -18,6 +18,11 @@
         </style>
 
     </head>
+
+    <?php
+        session_start();
+        $username = $_SESSION['username'];
+    ?>
     
     <body>
       <center>
@@ -51,7 +56,7 @@
                      
                 </td>
                 <td colspan = "120">
-                    Welcome Bob!
+                    Welcome <?php  echo "$username";?>
 
                 </td>
             </tr>

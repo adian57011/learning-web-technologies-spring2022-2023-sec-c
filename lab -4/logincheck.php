@@ -1,45 +1,34 @@
 <?php
-
     session_start();
+
+    $check_username = $_SESSION['username'];
+    $check_password = $_SESSION['password'];
 
     if(isset($_REQUEST['submit']))
     {
-        echo "Set Filled";
+        $username = $_REQUEST['username'];
+        $password = $_REQUEST['password'];
 
-        $username = $_REQUEST["username"];
-        $password = $_REQUEST["password"];
-
-        if($username="" || $password = "")
+        if($check_username == $username)
         {
-            echo "In the null";
-            echo "Null data Found!";
-            header("location:login.php");
-        }
-
-        else
-        {
-            if($username == $_SESSION['username'] && $_password == $_SESSION['password'])
+            if($check_password == $password)
             {
-                echo "In the session check";
-                $_SESSION['flag'] = "true";
-                header("location:dashboard.php");
+                header('location:dashboard.php');
             }
-
             else
             {
-                echo "Invalid Password";
+                echo "Invalid Password!!";
+
             }
-
         }
-
-  
-
+        
     }
 
-    else{
-        echo "Invalid Operation!!";
-    }
+    else
+    {
+        echo "Invalid Operation!!!";
 
+    }
 
 
 ?>
